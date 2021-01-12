@@ -46,7 +46,7 @@ namespace powerPointGenerator.Forms
             if (imgId8 != null) { pictureBox8.ImageLocation = imgId8; };
             if (imgId9 != null) { pictureBox9.ImageLocation = imgId9; };
 
-            textBox1.Text = BoldFinder();
+            
         }
 
      
@@ -82,9 +82,25 @@ namespace powerPointGenerator.Forms
 
             Microsoft.Office.Interop.PowerPoint.Shape sheetShape = slides[1].Shapes[1];
             // Add Picture
-            var img1 = slides[1].Shapes.AddPicture(pictureBox1.ImageLocation, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, sheetShape.Left+300, sheetShape.Top+300, sheetShape.Height-500, sheetShape.Width+200);
-            img1.ScaleHeight(1,Microsoft.Office.Core.MsoTriState.msoTrue);
-            
+            // var img1 = slides[1].Shapes.AddPicture(pictureBox1.ImageLocation, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, sheetShape.Left+300, sheetShape.Top+300, sheetShape.Height-500, sheetShape.Width+200);
+          //   img1.ScaleHeight(1,Microsoft.Office.Core.MsoTriState.msoTrue);
+
+          //  if (pictureBox2.BorderStyle > 0)
+          //  {
+          //     var img2 = slides[1].Shapes.AddPicture(pictureBox2.ImageLocation, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, sheetShape.Left + 300, sheetShape.Top + 300, sheetShape.Height - 500, sheetShape.Width + 200);
+          //     img2.ScaleHeight(1, Microsoft.Office.Core.MsoTriState.msoTrue);
+         //   }
+
+            PictureBox[] pictures = new PictureBox[] { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9 };
+
+           
+            foreach (PictureBox picture in pictures)
+            {
+                if (picture.BorderStyle > 0)
+                {
+                    slides[1].Shapes.AddPicture(picture.ImageLocation, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, sheetShape.Left + 300, sheetShape.Top + 300, sheetShape.Height - 500, sheetShape.Width + 200).ScaleHeight(1, Microsoft.Office.Core.MsoTriState.msoTrue);
+                }
+            }
            
         }
 
@@ -149,6 +165,115 @@ namespace powerPointGenerator.Forms
                 );
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.BorderStyle == 0)
+            {
+               pictureBox1.BorderStyle += 2;
+            }
+            else if (pictureBox1.BorderStyle > 0)
+            {
+                pictureBox1.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (pictureBox2.BorderStyle == 0)
+            {
+                pictureBox2.BorderStyle += 2;
+            }
+            else if (pictureBox2.BorderStyle > 0)
+            {
+                pictureBox2.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (pictureBox3.BorderStyle == 0)
+            {
+                pictureBox3.BorderStyle += 2;
+            }
+            else if (pictureBox3.BorderStyle > 0)
+            {
+                pictureBox3.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (pictureBox4.BorderStyle == 0)
+            {
+                pictureBox4.BorderStyle += 2;
+            }
+            else if (pictureBox4.BorderStyle > 0)
+            {
+                pictureBox4.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (pictureBox5.BorderStyle == 0)
+            {
+                pictureBox5.BorderStyle += 2;
+            }
+            else if (pictureBox5.BorderStyle > 0)
+            {
+                pictureBox5.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (pictureBox6.BorderStyle == 0)
+            {
+                pictureBox6.BorderStyle += 2;
+            }
+            else if (pictureBox6.BorderStyle > 0)
+            {
+                pictureBox6.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (pictureBox7.BorderStyle == 0)
+            {
+                pictureBox7.BorderStyle += 2;
+            }
+            else if (pictureBox7.BorderStyle > 0)
+            {
+                pictureBox7.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (pictureBox8.BorderStyle == 0)
+            {
+                pictureBox8.BorderStyle += 2;
+            }
+            else if (pictureBox8.BorderStyle > 0)
+            {
+                pictureBox8.BorderStyle -= 2;
+            }
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            if (pictureBox9.BorderStyle == 0)
+            {
+                pictureBox9.BorderStyle += 2;
+            }
+            else if (pictureBox9.BorderStyle > 0)
+            {
+                pictureBox9.BorderStyle -= 2;
+            }
+        }
+
     }
 }
 

@@ -46,7 +46,10 @@ namespace powerPointGenerator.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,16 +72,16 @@ namespace powerPointGenerator.Forms
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(27, 152);
+            this.titleBox.Location = new System.Drawing.Point(15, 110);
             this.titleBox.Name = "titleBox";
-            this.titleBox.Size = new System.Drawing.Size(250, 20);
+            this.titleBox.Size = new System.Drawing.Size(285, 20);
             this.titleBox.TabIndex = 1;
             this.titleBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(24, 107);
+            this.titleLabel.Location = new System.Drawing.Point(24, 76);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(53, 13);
             this.titleLabel.TabIndex = 2;
@@ -87,7 +90,7 @@ namespace powerPointGenerator.Forms
             // bodyLabel
             // 
             this.bodyLabel.AutoSize = true;
-            this.bodyLabel.Location = new System.Drawing.Point(24, 190);
+            this.bodyLabel.Location = new System.Drawing.Point(24, 144);
             this.bodyLabel.Name = "bodyLabel";
             this.bodyLabel.Size = new System.Drawing.Size(57, 13);
             this.bodyLabel.TabIndex = 4;
@@ -95,7 +98,7 @@ namespace powerPointGenerator.Forms
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(183, 452);
+            this.submit.Location = new System.Drawing.Point(206, 477);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(94, 43);
             this.submit.TabIndex = 5;
@@ -110,6 +113,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox1.Size = new System.Drawing.Size(232, 156);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -118,6 +122,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox2.Size = new System.Drawing.Size(244, 164);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
@@ -126,6 +131,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox3.Size = new System.Drawing.Size(244, 156);
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -134,6 +140,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox4.Size = new System.Drawing.Size(232, 150);
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
@@ -142,6 +149,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox5.Size = new System.Drawing.Size(244, 151);
             this.pictureBox5.TabIndex = 11;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -150,6 +158,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox6.Size = new System.Drawing.Size(244, 151);
             this.pictureBox6.TabIndex = 12;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -158,6 +167,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox7.Size = new System.Drawing.Size(232, 158);
             this.pictureBox7.TabIndex = 13;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -166,6 +176,7 @@ namespace powerPointGenerator.Forms
             this.pictureBox8.Size = new System.Drawing.Size(244, 158);
             this.pictureBox8.TabIndex = 14;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox9
             // 
@@ -174,10 +185,11 @@ namespace powerPointGenerator.Forms
             this.pictureBox9.Size = new System.Drawing.Size(244, 158);
             this.pictureBox9.TabIndex = 15;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 536);
+            this.button1.Location = new System.Drawing.Point(977, 567);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 40);
             this.button1.TabIndex = 16;
@@ -187,37 +199,68 @@ namespace powerPointGenerator.Forms
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(27, 227);
+            this.richTextBox1.Location = new System.Drawing.Point(15, 185);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(250, 187);
+            this.richTextBox1.Size = new System.Drawing.Size(285, 170);
             this.richTextBox1.TabIndex = 17;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(54, 429);
+            this.button2.Location = new System.Drawing.Point(216, 378);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(84, 25);
             this.button2.TabIndex = 18;
             this.button2.Text = "Bold";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(315, 547);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 48);
-            this.textBox1.TabIndex = 19;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 418);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Highlight text and press the Bold button to make words Bold";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 440);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(229, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Bold words will be included in the image search";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 538);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(311, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Press the Find Images button to find pictures";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 567);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(313, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Click on images you want to include, then click Create";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 664);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
@@ -271,7 +314,10 @@ namespace powerPointGenerator.Forms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
