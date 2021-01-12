@@ -32,7 +32,6 @@ namespace powerPointGenerator.Forms
             this.Intro = new System.Windows.Forms.Label();
             this.titleBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.bodyBox = new System.Windows.Forms.TextBox();
             this.bodyLabel = new System.Windows.Forms.Label();
             this.submit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +44,9 @@ namespace powerPointGenerator.Forms
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -67,7 +69,7 @@ namespace powerPointGenerator.Forms
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(27, 78);
+            this.titleBox.Location = new System.Drawing.Point(27, 152);
             this.titleBox.Name = "titleBox";
             this.titleBox.Size = new System.Drawing.Size(250, 20);
             this.titleBox.TabIndex = 1;
@@ -76,24 +78,16 @@ namespace powerPointGenerator.Forms
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(24, 62);
+            this.titleLabel.Location = new System.Drawing.Point(24, 107);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(53, 13);
             this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Slide Title";
             // 
-            // bodyBox
-            // 
-            this.bodyBox.Location = new System.Drawing.Point(27, 155);
-            this.bodyBox.Multiline = true;
-            this.bodyBox.Name = "bodyBox";
-            this.bodyBox.Size = new System.Drawing.Size(250, 200);
-            this.bodyBox.TabIndex = 3;
-            // 
             // bodyLabel
             // 
             this.bodyLabel.AutoSize = true;
-            this.bodyLabel.Location = new System.Drawing.Point(24, 139);
+            this.bodyLabel.Location = new System.Drawing.Point(24, 190);
             this.bodyLabel.Name = "bodyLabel";
             this.bodyLabel.Size = new System.Drawing.Size(57, 13);
             this.bodyLabel.TabIndex = 4;
@@ -101,7 +95,7 @@ namespace powerPointGenerator.Forms
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(102, 389);
+            this.submit.Location = new System.Drawing.Point(183, 452);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(94, 43);
             this.submit.TabIndex = 5;
@@ -183,7 +177,7 @@ namespace powerPointGenerator.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 479);
+            this.button1.Location = new System.Drawing.Point(54, 536);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 40);
             this.button1.TabIndex = 16;
@@ -191,11 +185,41 @@ namespace powerPointGenerator.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(27, 227);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(250, 187);
+            this.richTextBox1.TabIndex = 17;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(54, 429);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Bold";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(315, 547);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 48);
+            this.textBox1.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 664);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -208,7 +232,6 @@ namespace powerPointGenerator.Forms
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.bodyLabel);
-            this.Controls.Add(this.bodyBox);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.titleBox);
             this.Controls.Add(this.Intro);
@@ -234,7 +257,6 @@ namespace powerPointGenerator.Forms
         private System.Windows.Forms.Label Intro;
         private System.Windows.Forms.TextBox titleBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.TextBox bodyBox;
         private System.Windows.Forms.Label bodyLabel;
         private System.Windows.Forms.Button submit;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -247,6 +269,9 @@ namespace powerPointGenerator.Forms
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

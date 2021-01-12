@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.PowerPoint;
 using Application = Microsoft.Office.Interop.PowerPoint.Application;
@@ -24,7 +25,7 @@ namespace powerPointGenerator.Forms
       
         private async void submit_Click(object sender, EventArgs e)
         {
-            var response = await Shared.RestHelper.Get((titleBox.Text + " " + bodyBox.Text));
+            var response = await Shared.RestHelper.Get((titleBox.Text + " " + BoldFinder()));
             var jo = Newtonsoft.Json.Linq.JObject.Parse(response);
             var imgId = jo["items"][0]["link"].ToString();
             var imgId2 = jo["items"][1]["link"].ToString();
@@ -44,12 +45,14 @@ namespace powerPointGenerator.Forms
             if (imgId7 != null) { pictureBox7.ImageLocation = imgId7; };
             if (imgId8 != null) { pictureBox8.ImageLocation = imgId8; };
             if (imgId9 != null) { pictureBox9.ImageLocation = imgId9; };
-     
+
+            textBox1.Text = BoldFinder();
         }
 
      
         private void button1_Click(object sender, EventArgs e)
-        {
+        {   
+
             Application pptApplication = new Application();
 
             Microsoft.Office.Interop.PowerPoint.Slides slides;
@@ -73,7 +76,7 @@ namespace powerPointGenerator.Forms
 
             // Add body
             objText = slide.Shapes[2].TextFrame.TextRange;
-            objText.Text = bodyBox.Text;
+            objText.Text = richTextBox1.Text;
             objText.Font.Name = "Arial";
             objText.Font.Size = 30;
 
@@ -81,11 +84,70 @@ namespace powerPointGenerator.Forms
             // Add Picture
             var img1 = slides[1].Shapes.AddPicture(pictureBox1.ImageLocation, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, sheetShape.Left+300, sheetShape.Top+300, sheetShape.Height-500, sheetShape.Width+200);
             img1.ScaleHeight(1,Microsoft.Office.Core.MsoTriState.msoTrue);
+            
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private string BoldFinder()
+        {
+            string output = "" ;
+
+            bool b = false;
+          
+
+            for (richTextBox1.SelectionStart = 0; richTextBox1.SelectionStart < richTextBox1.TextLength; richTextBox1.SelectionStart++)
+            {
+                 richTextBox1.SelectionLength = 1;
+
+                var s = richTextBox1.SelectionFont.Style;
+
+                if ((s & FontStyle.Bold) != 0 != b)
+                {
+                    output += richTextBox1.SelectedText;
+                }
+
+
+               // output += richTextBox1.SelectedText;
+
+            }
+            return output;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ToggleBold();
+        }
+        private void ToggleBold()
+        {
+            if (richTextBox1.SelectionFont != null)
+            {
+                System.Drawing.Font currentFont = richTextBox1.SelectionFont;
+                System.Drawing.FontStyle newFontStyle;
+
+                if (richTextBox1.SelectionFont.Bold == true)
+                {
+                    newFontStyle = FontStyle.Regular;
+                }
+                else
+                {
+                    newFontStyle = FontStyle.Bold;
+                }
+
+                richTextBox1.SelectionFont = new System.Drawing.Font(
+                   currentFont.FontFamily,
+                   currentFont.Size,
+                   newFontStyle
+                );
+            }
         }
     }
 }
